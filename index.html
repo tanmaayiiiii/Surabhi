@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Surabhi</title>
+    <meta
+      name="description"
+      content="Surabhi music class notes, recordings, and lyrics."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Cormorant+Garamond:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <div class="sidebar-top">
+          <div>
+            <p class="eyebrow">Surabhi</p>
+            <h1>Class notes</h1>
+          </div>
+        </div>
+
+        <nav class="date-list" id="dateList" aria-label="Class dates"></nav>
+      </aside>
+
+      <main class="content">
+        <section class="panel">
+          <p class="eyebrow">Class details</p>
+          <h2 id="classTitle" class="content-date"></h2>
+        </section>
+
+        <section class="panel">
+          <h2>Content</h2>
+          <div class="content-copy">
+            <p><strong>Raag: Vrindavani Saarang</strong></p>
+            <p>
+              Vilambit bandish (Mero Suno Shyam) and sthayi aalap (start
+              preparing for GP using this recording)
+            </p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <h2>Recordings</h2>
+          <div class="recording-list" id="classRecordings"></div>
+        </section>
+
+        <section class="panel">
+          <h2>Notes / Lyrics</h2>
+          <div class="notes-lyrics">
+            <ul class="bullet-list" id="classNotes"></ul>
+            <h3>बंदिश (ताल - झपताल)</h3>
+            <pre class="lyrics" id="classLyrics"></pre>
+            <h3>Bandish (Taal - Jhaptaal)</h3>
+            <pre class="lyrics" id="classLyricsEnglish"></pre>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

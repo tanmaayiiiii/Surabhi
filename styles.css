@@ -1,0 +1,230 @@
+:root {
+  --bg: #f5eee4;
+  --panel: rgba(255, 250, 244, 0.88);
+  --panel-strong: #fffaf4;
+  --text: #33261d;
+  --muted: #705746;
+  --accent: #8e4a2f;
+  --accent-strong: #6f2f1c;
+  --border: rgba(112, 87, 70, 0.16);
+  --shadow: 0 18px 40px rgba(84, 55, 33, 0.1);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at top left, rgba(216, 178, 122, 0.22), transparent 24%),
+    radial-gradient(circle at bottom right, rgba(142, 74, 47, 0.16), transparent 30%),
+    var(--bg);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 320px minmax(0, 1fr);
+}
+
+.sidebar {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow: auto;
+  padding: 1.25rem;
+  border-right: 1px solid var(--border);
+  background: rgba(255, 249, 242, 0.78);
+  backdrop-filter: blur(16px);
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow {
+  margin: 0 0 0.35rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+}
+
+h1,
+h2 {
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+h1 {
+  margin: 0 0 0.35rem;
+  font-size: 2rem;
+}
+
+h2 {
+  margin-bottom: 0.5rem;
+}
+
+.date-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.date-button {
+  width: 100%;
+  text-align: left;
+  border: 1px solid transparent;
+  background: transparent;
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  color: var(--text);
+  cursor: pointer;
+  display: grid;
+  gap: 0.15rem;
+}
+
+.date-button.active {
+  background: var(--panel);
+  border-color: var(--border);
+  box-shadow: var(--shadow);
+}
+
+.date-button .day {
+  font-weight: 700;
+}
+
+.date-button .meta,
+.content-subtitle,
+.content-date,
+.bullet-list,
+.lyrics {
+  color: var(--muted);
+}
+
+.content {
+  padding: 1.5rem;
+  max-width: 980px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 24px;
+  box-shadow: var(--shadow);
+  padding: 1.3rem 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.content-meta {
+  display: grid;
+  gap: 0.25rem;
+}
+
+.content-date {
+  margin: 0.55rem 0 0;
+  font-size: clamp(2.2rem, 3.4vw, 3.4rem);
+  font-weight: 600;
+  color: var(--text);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+}
+
+.content-subtitle {
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+.content-copy {
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.content-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.recording-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.recording-item {
+  display: grid;
+  gap: 0.65rem;
+  padding: 1rem;
+  border-radius: 18px;
+  background: var(--panel-strong);
+  border: 1px solid var(--border);
+}
+
+.recording-item strong {
+  font-size: 1rem;
+}
+
+audio {
+  width: 100%;
+}
+
+.notes-lyrics {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.bullet-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  line-height: 1.7;
+}
+
+.lyrics {
+  margin: 0;
+  white-space: pre-wrap;
+  line-height: 1.8;
+  font-family: inherit;
+}
+
+.notes-lyrics h3 {
+  margin-bottom: 0.7rem;
+  color: var(--accent-strong);
+  font-size: 1.15rem;
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    position: relative;
+    height: auto;
+    width: auto;
+    border-right: 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .content {
+    padding: 1rem;
+  }
+}
