@@ -75,7 +75,6 @@ function renderSession() {
     .map(
       (recording) => `
         <article class="recording-item">
-          <strong>${recording.title}</strong>
           <audio controls preload="metadata">
             <source src="${recording.src}" type="audio/mp4" />
           </audio>
