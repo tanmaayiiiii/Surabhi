@@ -83,6 +83,17 @@ function renderSession() {
     )
     .join("");
 
+  const audioPlayers = classRecordings.querySelectorAll("audio");
+  audioPlayers.forEach((player) => {
+    player.addEventListener("play", () => {
+      audioPlayers.forEach((otherPlayer) => {
+        if (otherPlayer !== player) {
+          otherPlayer.pause();
+        }
+      });
+    });
+  });
+
   classLyrics.textContent = session.lyrics;
   classLyricsEnglish.textContent = session.lyricsEnglish;
 }
